@@ -138,12 +138,12 @@ section{padding:96px 6%}
 .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent) 0%,rgba(99,102,241,0) 100%)}
 .ec{position:relative;margin-bottom:1.6rem;background:var(--card);border:1px solid rgba(255,255,255,.055);border-radius:var(--r);padding:1.7rem 1.9rem;transition:all .25s}
 .ec:hover{border-color:var(--accent);transform:translateX(6px);box-shadow:0 8px 30px rgba(99,102,241,.12)}
-.ec::before{content:'';position:absolute;left:-2.55rem;top:1.7rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(99,102,241,.2)}
+.ec::before{content:'';position:absolute;left:calc(-2rem - 6px);top:1.85rem;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(99,102,241,.25)}
 .ec-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.4rem;margin-bottom:.25rem}
 .ec-role{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:700;color:var(--text)}
 .ec-period{font-size:.75rem;color:var(--accent2);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);padding:.18rem .7rem;border-radius:999px;white-space:nowrap}
 .ec-co{font-size:.85rem;color:var(--accent2);font-weight:600;margin-bottom:.85rem}
-.ec-ul{list-style:none}
+.ec-ul{list-style:none;padding:0;margin:0 0 .5rem 0}
 .ec-ul li{color:var(--muted);font-size:.86rem;line-height:1.78;padding-left:1.2rem;position:relative;margin-bottom:.3rem}
 .ec-ul li::before{content:'▸';position:absolute;left:0;color:var(--accent)}
 .ec-ul li b{color:var(--text);font-weight:600}
@@ -217,6 +217,54 @@ footer a{color:var(--accent2);text-decoration:none}
   .nav-links{display:none}
   body{cursor:auto}
   #cursor,#cursor-glow{display:none}
+  .con{padding:0 1.2rem}
+  section{padding:3.5rem 0}
+  .hero-desc{max-width:100%}
+  .typed-wrap{min-width:0}
+  .tl{padding-left:1.5rem}
+  .ec::before{left:calc(-1.5rem - 6px)}
+  .ec-top{flex-direction:column;gap:.3rem}
+  .ec-period{align-self:flex-start}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .c-chips{flex-direction:column;align-items:center}
+  .impact-row{gap:.3rem}
+}
+@media(max-width:520px){
+  .con{padding:0 1rem}
+  section{padding:2.8rem 0}
+  .hero-name{font-size:2.2rem}
+  .hero-inner{gap:2rem}
+  .photo-wrap{width:140px;height:175px}
+  .photo-img{width:140px;height:175px}
+  .photo-ring{inset:-8px}
+  .photo-ring-inner{inset:-6px}
+  .stats-grid{width:140px;gap:.4rem}
+  .sc-num{font-size:1.1rem}
+  .sc-lbl{font-size:.58rem}
+  .hero-right{gap:.7rem}
+  .hero-btns{flex-direction:column;width:100%}
+  .btn-p,.btn-g{justify-content:center;width:100%;box-sizing:border-box}
+  .skills-grid{grid-template-columns:1fr}
+  .tl{padding-left:1.2rem}
+  .ec{padding:1.2rem 1rem}
+  .ec::before{left:calc(-1.2rem - 6px);top:1.4rem;width:8px;height:8px}
+  .ec-role{font-size:.92rem}
+  .ec-co{font-size:.78rem}
+  .ec-ul li{font-size:.82rem}
+  .ach{font-size:.7rem}
+  .tag{font-size:.66rem}
+  .s-title{font-size:1.5rem}
+  .nav-cta{padding:.38rem .9rem;font-size:.78rem}
+  .tbox::before{font-size:5rem;top:-1rem;left:-.5rem}
+  .t-text{font-size:.92rem}
+  .c-title{font-size:1.6rem}
+  .fact{padding:.75rem .9rem}
+  .sg{padding:1rem}
+  .nav-logo{font-size:1rem}
+  .hero-role{font-size:.88rem}
+  .impact-chip{font-size:.7rem;padding:.22rem .6rem}
+  .pill{font-size:.73rem}
 }
 </style>
 </head>
@@ -251,7 +299,7 @@ footer a{color:var(--accent2);text-decoration:none}
   <div class="grid-bg"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-tag"><div class="dot"></div>AVAILABLE FOR GERMANY &nbsp;🇩🇪</div>
+      
       <h1 class="hero-name">K Mukunda</h1>
       <p class="hero-role">
         SDE II &nbsp;·&nbsp;
@@ -306,10 +354,10 @@ footer a{color:var(--accent2);text-decoration:none}
         <p>I'm a <span class="hl">Full Stack Developer and SDE II</span> with 5+ years of experience shipping scalable applications across <span class="hl">maritime technology</span>, <span class="hl">automotive enterprise</span>, and <span class="hl">food-tech SaaS</span>.</p>
         <p>At <span class="hl">Geoserve India</span> (Scorpio Marine Management), I'm building <span class="hl">GeoOne</span> — the maritime industry's first unified Voyage Operations Suite — covering voyage optimisation, vessel performance, bunker procurement, and emissions compliance for global fleet operators.</p>
         <p>At <span class="hl">Daimler Truck Innovation Center India</span>, I built global enterprise applications serving all Daimler Truck brands worldwide. At <span class="hl">Appiness</span>, I architected a custom framework for <span class="hl">Frontm's</span> maritime communication platform and led an 8-person engineering team.</p>
-        <p>An early adopter of <span class="hl">AI-assisted development</span> — I actively use <span class="hl">GitHub Copilot, Cursor, Augment, Claude AI</span>, and have integrated the <span class="hl">OpenAI API</span> into production workflows. Twice recognised as <span class="hl">Best Employee of the Year</span>. <span class="hl">EU Blue Card eligible</span>, open to relocation to Germany.</p>
+        <p>An early adopter of <span class="hl">AI-assisted development</span> — I actively use <span class="hl">GitHub Copilot, Cursor, Augment, Claude AI</span>, and have integrated the <span class="hl">OpenAI API</span> into production workflows. Twice recognised as <span class="hl">Best Employee of the Year</span>. <span class="hl">EU Blue Card eligible</span>, open to relocation across the EU.</p>
       </div>
       <div class="fact-list reveal d1">
-        <div class="fact"><div class="fi">📍</div><div><strong>Bangalore, India</strong><span>Relocating to Germany · EU Blue Card eligible · 30–60 day notice</span></div></div>
+        <div class="fact"><div class="fi">📍</div><div><strong>Bangalore, India</strong><span>Relocating to EU · Blue Card eligible · 30–60 day notice</span></div></div>
         <div class="fact"><div class="fi">🎓</div><div><strong>B.E. Electronics & Communication</strong><span>AMC Engineering College · VTU · 2019</span></div></div>
         <div class="fact"><div class="fi">🌐</div><div><strong>Languages</strong><span>English C1 · Kannada / Telugu Native · German A1</span></div></div>
         <div class="fact"><div class="fi">🚢</div><div><strong>Domain Expertise</strong><span>Maritime Technology · Automotive Enterprise · Food-Tech</span></div></div>
