@@ -195,9 +195,38 @@ nav.solid{border-color:rgba(37,99,235,0.2)}
 .trust-cos{display:flex;flex-wrap:wrap;gap:.6rem}
 .trust-co{font-size:.82rem;font-weight:600;color:var(--muted);
   background:rgba(255,255,255,.035);border:1px solid var(--border);
-  padding:.3rem .85rem;border-radius:7px;transition:all .2s;white-space:nowrap}
+  padding:.3rem .85rem;border-radius:7px;transition:all .2s;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.45rem}
 .trust-co:hover{color:var(--text);border-color:rgba(255,255,255,.14)}
+.trust-logo{height:14px;width:auto;filter:brightness(0) invert(1);opacity:.55;flex-shrink:0}
+/* ── Achievements strip ──────────────────────────────────────────────────── */
+.achieve-strip{background:rgba(37,99,235,.04);border-top:1px solid rgba(37,99,235,.1);
+  border-bottom:1px solid rgba(37,99,235,.1);padding:.9rem 6%}
+.achieve-inner{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;align-items:center}
+.achieve-pill{font-size:.78rem;color:var(--muted);
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  padding:.35rem 1rem;border-radius:99px}
+.achieve-pill strong{color:var(--text)}
 
+/* ── What I've Helped Build ──────────────────────────────────────────────── */
+.built-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem}
+.built-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);
+  padding:1.75rem;display:flex;flex-direction:column;gap:.6rem;
+  transition:all .25s}
+.built-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);
+  box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.built-logo-wrap{height:32px;display:flex;align-items:center;margin-bottom:.4rem}
+.built-logo{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.7}
+.built-logo-text{font-size:1rem;font-weight:700;color:var(--muted);font-family:'Space Grotesk',sans-serif}
+.built-role{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--alight)}
+.built-product{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;
+  color:var(--text);margin:.1rem 0}
+.built-desc{font-size:.82rem;color:var(--muted);line-height:1.65;flex:1}
+.built-link{font-size:.77rem;font-weight:600;color:var(--accent);margin-top:.4rem;
+  transition:color .2s}
+.built-link:hover{color:var(--alight)}
+@media(max-width:900px){.built-grid{grid-template-columns:1fr}}
 /* ── Scroll ticker (tech strip) ─────────────────────────────────────────── */
 .ticker{background:var(--bg);border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);padding:.9rem 0;overflow:hidden;position:relative}
@@ -315,10 +344,32 @@ section{padding:100px 6%}
 .c-teal{background:linear-gradient(90deg,#0891B2,#06B6D4,#22D3EE)}
 .c-indigo{background:linear-gradient(90deg,#4F46E5,#6366F1,#818CF8)}
 .proj-body{padding:1.8rem 2rem;flex:1;display:flex;flex-direction:column}
+/* GeoOne mobile dashboard showcase */
+.geoone-showcase{display:flex;justify-content:center;margin:1.25rem 0}
+.geoone-screenshot-wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.geoone-screenshot-label{font-size:.6rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.geoone-screenshot-img{max-height:320px;width:auto;border-radius:16px;
+  box-shadow:0 8px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);
+  display:block}
+@media(max-width:600px){.geoone-screenshot-img{max-height:240px;border-radius:12px}}
+/* Daimler brand bar */
+.pv-brand-bar{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:.75rem;padding:1rem 1.5rem;
+  background:linear-gradient(135deg,#050c18 0%,#030810 100%)}
+.pv-brand-label{font-size:.6rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.pv-brands{display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:1.5rem}
+.pv-brand-logo{height:20px;width:auto;filter:brightness(0) invert(1);opacity:.55;
+  transition:opacity .2s}
+.pv-brand-logo:hover{opacity:1}
+.pv-brand-text{font-size:.72rem;font-weight:700;letter-spacing:.06em;
+  color:rgba(255,255,255,.45)}
 /* Project card visual headers */
 .proj-visual{height:130px;overflow:hidden;
   background:#050d18;border-bottom:1px solid var(--border)}
-.proj-visual.featured{height:160px}
+.proj-visual.featured{height:200px}
 /* Vessel map mock */
 .pv-map{width:100%;height:100%;position:relative;
   background:radial-gradient(ellipse at 30% 60%,#071d35 0%,#020a15 60%,#010610 100%)}
@@ -446,6 +497,17 @@ section{padding:100px 6%}
   background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.22);
   color:var(--green);font-size:.76rem;font-weight:600;
   padding:.32rem 1rem;border-radius:999px;margin-bottom:1.2rem}
+/* ── Engineering Philosophy ──────────────────────────────────────────────── */
+.phil-body{max-width:700px;margin:2rem auto 2.5rem;text-align:center;
+  color:var(--muted);line-height:1.9;font-size:.95rem;display:flex;flex-direction:column;gap:1rem}
+.phil-body strong,.phil-body em{color:var(--text)}
+.phil-beliefs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem}
+.phil-belief{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.4rem;border-top:2px solid var(--accent)}
+.phil-belief-title{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;
+  color:var(--text);margin-bottom:.5rem}
+.phil-belief-desc{font-size:.8rem;color:var(--muted);line-height:1.65}
+@media(max-width:900px){.phil-beliefs{grid-template-columns:1fr}}
 .contact-title{font-family:'Space Grotesk',sans-serif;
   font-size:clamp(1.9rem,3vw,2.8rem);font-weight:700;color:var(--text);
   margin-bottom:.8rem;letter-spacing:-.02em}
@@ -459,6 +521,8 @@ section{padding:100px 6%}
   font-size:.88rem;font-weight:500;transition:all .2s}
 .c-link:hover{border-color:rgba(37,99,235,.45);color:var(--alight);
   transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.12)}
+.c-link-primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.c-link-primary:hover{background:var(--alight);border-color:var(--alight);color:#fff}
 
 /* contact form */
 .cform{max-width:540px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem;text-align:left}
@@ -621,12 +685,13 @@ footer a:hover{color:var(--text)}
       <p class="hero-title reveal d2">Senior Full Stack Engineer</p>
 
       <p class="hero-desc reveal d2">
-        I built <strong>GeoOne</strong> — the maritime industry's first unified Voyage Operations Suite,
-        now used by <strong>global fleet operators worldwide</strong> for real-time vessel tracking,
-        IMO CII/EEXI emissions compliance, and bunker analytics.
-        Previously at <strong>Daimler Truck (DTICI)</strong> building enterprise tooling across
-        6 truck brands globally, and at <strong>Appiness</strong> leading 8 engineers to architect
-        a custom JS framework for Frontm's maritime platform.
+        I built <strong>GeoOne</strong> — the <strong>world&rsquo;s first integrated Voyage Operations Suite</strong>,
+        used by global fleet operators for real-time vessel tracking, bunker procurement intelligence,
+        laytime management, and automated IMO CII/EEXI/EU ETS compliance.
+        Previously at <strong>Daimler Truck (DTICI)</strong> engineering enterprise tooling across 6 brands
+        and 35 global production sites, and at <strong>Appiness</strong> leading 8 engineers to architect
+        the runtime powering <strong>FrontM&rsquo;s maritime platform</strong> — now serving
+        <strong>1,000+ vessels</strong> and <strong>50,000+ maritime professionals</strong>.
       </p>
 
       <div class="meta-row reveal d3">
@@ -639,7 +704,6 @@ footer a:hover{color:var(--text)}
           Bangalore &rarr; EU
         </span>
         <span class="meta-chip">🇪🇺 EU Blue Card Eligible</span>
-        <span class="meta-chip">&#128337; 30&ndash;60 Day Notice</span>
       </div>
 
       <div class="tech-row reveal d3">
@@ -693,15 +757,33 @@ footer a:hover{color:var(--text)}
 </section>
 
 <!-- ── TRUST STRIP ───────────────────────────────────────────────────────── -->
+<!-- ── ACHIEVEMENTS ──────────────────────────────────────────────────────── -->
+<div class="achieve-strip">
+  <div class="achieve-inner con">
+    <div class="achieve-pill reveal">&#127942; <strong>Best Employee of the Year</strong> &mdash; Appiness (2023)</div>
+    <div class="achieve-pill reveal d1">&#127942; <strong>Creative Genius Award</strong> &mdash; Capgemini (internal programme recognising exceptional engineering delivery)</div>
+    <div class="achieve-pill reveal d2">&#128674; Built the world&rsquo;s <strong>first integrated Voyage Operations Suite</strong> &mdash; GeoOne</div>
+  </div>
+</div>
+
 <div class="trust-strip">
   <div class="trust-inner">
     <span class="trust-label">Shipped products for</span>
     <div class="trust-divider"></div>
     <div class="trust-cos">
-      <span class="trust-co">Geoserve India &mdash; Global Fleet Operators</span>
-      <span class="trust-co">Daimler Truck &amp; DTICI</span>
+      <span class="trust-co">
+        <img src="https://geoserves.com/wp-content/themes/geoserve/img/logo-geoserve.svg" alt="Geoserve" class="trust-logo" onerror="this.style.display='none'"/>
+        Geoserve India
+      </span>
+      <span class="trust-co">
+        <img src="https://www.daimlertruck.com/_assets/055a696e49fa76c6e6549e622d95030d/Images/daimlertruck.svg" alt="Daimler Truck" class="trust-logo" onerror="this.style.display='none'"/>
+        Daimler Truck &amp; DTICI
+      </span>
       <span class="trust-co">Capgemini</span>
-      <span class="trust-co">Appiness &mdash; Frontm Maritime</span>
+      <span class="trust-co">
+        <img src="https://frontm.com/frontm-logo.svg" alt="FrontM" class="trust-logo" onerror="this.style.display='none'"/>
+        Appiness &mdash; FrontM Maritime
+      </span>
     </div>
   </div>
 </div>
@@ -768,6 +850,73 @@ footer a:hover{color:var(--text)}
 </div>
 
 <!-- ── ABOUT ─────────────────────────────────────────────────────────────── -->
+<!-- ── WHAT I'VE HELPED BUILD ─────────────────────────────────────────────── -->
+<section id="built" style="padding:5rem 0 3rem">
+  <div class="con">
+    <p class="s-eyebrow reveal">Product Track Record</p>
+    <h2 class="s-title reveal d1">Products I&rsquo;ve <em>Shipped</em></h2>
+    <div class="built-grid">
+
+      <div class="built-card reveal">
+        <div class="built-logo-wrap">
+          <img src="https://geoserves.com/wp-content/themes/geoserve/img/logo-geoserve.svg"
+               alt="Geoserve" class="built-logo"
+               onerror="this.outerHTML='<span class=built-logo-text>GeoServe</span>'"/>
+        </div>
+        <div class="built-role">Lead Engineer &amp; Product Builder</div>
+        <h3 class="built-product">GeoOne &mdash; Voyage Operations Suite</h3>
+        <p class="built-desc">World&rsquo;s first integrated VOS — real-time vessel tracking, bunker procurement intelligence, laytime management, and automated IMO emissions compliance for global fleet operators.</p>
+        <a href="https://geoserves.com/services/geoone/" target="_blank" rel="noopener" class="built-link">
+          View product &rarr;
+        </a>
+      </div>
+
+      <div class="built-card reveal d1">
+        <div class="built-logo-wrap">
+          <img src="https://frontm.com/frontm-logo.svg"
+               alt="FrontM" class="built-logo"
+               onerror="this.outerHTML='<span class=built-logo-text>FrontM</span>'"/>
+        </div>
+        <div class="built-role">Technical Lead &mdash; 8-Engineer Team</div>
+        <h3 class="built-product">FrontM &mdash; Maritime Superapp Platform</h3>
+        <p class="built-desc">Built the core application runtime powering FrontM — now serving 1,000+ vessels and 50,000+ maritime professionals across 25+ leading shipping companies globally.</p>
+        <a href="https://frontm.com" target="_blank" rel="noopener" class="built-link">
+          View platform &rarr;
+        </a>
+      </div>
+
+      <div class="built-card reveal d2">
+        <div class="built-logo-wrap">
+          <img src="https://www.daimlertruck.com/_assets/055a696e49fa76c6e6549e622d95030d/Images/daimlertruck.svg"
+               alt="Daimler Truck" class="built-logo"
+               onerror="this.outerHTML='<span class=built-logo-text>Daimler Truck</span>'"/>
+        </div>
+        <div class="built-role">Senior Full Stack Engineer &mdash; DTICI Bengaluru</div>
+        <h3 class="built-product">Process Support Systems &mdash; DTICI</h3>
+        <p class="built-desc">Enterprise tooling for one of the world&rsquo;s largest commercial vehicle manufacturers — 6 truck brands, 35 global production sites, 100,000+ employees. Built on Azure, React &amp; Spring Boot.</p>
+        <a href="https://www.daimlertruck.com/en" target="_blank" rel="noopener" class="built-link">
+          View company &rarr;
+        </a>
+      </div>
+
+      <div class="built-card reveal d3">
+        <div class="built-logo-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Capgemini_201x_logo.svg/320px-Capgemini_201x_logo.svg.png"
+               alt="Capgemini" class="built-logo"
+               onerror="this.outerHTML='<span class=built-logo-text>Capgemini</span>'"/>
+        </div>
+        <div class="built-role">Senior Software Engineer &mdash; Technology & Cloud</div>
+        <h3 class="built-product">Hospitality SaaS Platform &mdash; Capgemini</h3>
+        <p class="built-desc">End-to-end full-stack delivery for a US restaurant chain client — React, Spring Boot, Node.js, and MongoDB. Full SDLC ownership from requirements through production. Recognised with the <strong>Creative Genius Award</strong>.</p>
+        <a href="https://www.capgemini.com" target="_blank" rel="noopener" class="built-link">
+          View company &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="con">
     <p class="s-eyebrow reveal">About</p>
@@ -775,28 +924,21 @@ footer a:hover{color:var(--text)}
     <div class="about-grid">
       <div class="about-text">
         <p class="reveal">
-          I&rsquo;m a <strong>Senior Full Stack Engineer (SDE II)</strong> currently building
-          <strong><a href="https://www.geoserves.com" target="_blank" rel="noopener">GeoOne</a></strong>
-          at Geoserve India — the maritime industry&rsquo;s first unified Voyage Operations Suite,
-          used by global shipping operators to manage voyage planning, vessel performance,
-          bunker procurement, and IMO emissions compliance (CII/EEXI) in a single platform.
-          I work across the full stack: React frontends, Node.js APIs, AWS infrastructure,
-          and Mapbox GL for geospatial visualizations.
+          I&rsquo;m a <strong>Senior Full Stack Engineer</strong> who builds products at the intersection of complex domains and real engineering constraints. My work spans maritime SaaS at Geoserve, enterprise tooling across six global truck brands at Daimler, and technical leadership at Appiness — each requiring me to go deep on the domain while delivering full-stack at scale.
         </p>
         <p class="reveal d1">
           Before Geoserve, I spent 16 months at <strong>Daimler Truck Innovation Center India</strong>,
           building enterprise internal tooling used across all six Daimler Truck brands —
           Mercedes-Benz Trucks, Freightliner, FUSO, BharatBenz, Western Star, and Setra —
           in one of Daimler&rsquo;s largest engineering centres outside Germany.
-          Prior to that, I led a team of <strong>8 engineers at Appiness</strong> and
-          architected a <strong>custom JavaScript framework from scratch</strong> for Frontm&rsquo;s
-          global maritime communication platform, using Node.js, C++, and AWS.
+          Prior to that, I led a team of <strong>8 engineers at Appiness</strong>,
+          where we built the core runtime powering <strong>FrontM</strong> — a maritime superapp now serving
+          1,000+ vessels and 50,000+ professionals globally — using Node.js and AWS.
         </p>
         <p class="reveal d2">
           I&rsquo;m an <strong>AI-native developer</strong> — I actively use GitHub Copilot,
           Cursor, Augment, and Claude AI in my daily workflow, and have integrated
-          OpenAI API into production systems. I move fast, think architecturally,
-          and care deeply about code quality and system reliability.
+          OpenAI API into production systems.
           I&rsquo;m <strong>EU Blue Card eligible</strong> and actively seeking senior engineering
           roles across the EU and in remote-first product companies.
         </p>
@@ -812,7 +954,7 @@ footer a:hover{color:var(--text)}
         </div>
         <div class="fact-item">
           <span class="fact-icon">⚙️</span>
-          <div><strong>Framework Architect — Custom JS Runtime</strong><span>Built from scratch · Node.js + C++ + AWS · led 8-person team</span></div>
+          <div><strong>Framework Architect — Custom JS Runtime</strong><span>Built from scratch · Node.js + AWS · led 8-person team</span></div>
         </div>
         <div class="fact-item">
           <span class="fact-icon">🤖</span>
@@ -843,7 +985,7 @@ footer a:hover{color:var(--text)}
       <!-- Geoserve -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">Senior Full Stack Engineer (SDE II)</span>
+          <span class="exp-role">Senior Full Stack Engineer</span>
           <span class="exp-period">Jan 2025 – Present</span>
         </div>
         <div class="exp-company">Geoserve India Pvt. Ltd. &nbsp;&middot;&nbsp; Maritime SaaS · Global Fleet Operators</div>
@@ -875,7 +1017,7 @@ footer a:hover{color:var(--text)}
       <!-- Daimler -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">Full Stack Developer</span>
+          <span class="exp-role">Senior Full Stack Engineer</span>
           <span class="exp-period">Sep 2023 – Jan 2025</span>
         </div>
         <div class="exp-company">Daimler Truck Innovation Center India (DTICI) &nbsp;&middot;&nbsp; Bengaluru</div>
@@ -909,10 +1051,10 @@ footer a:hover{color:var(--text)}
       <!-- Appiness -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">Technical Lead &amp; Full Stack Developer</span>
+          <span class="exp-role">Technical Lead &amp; Full Stack Engineer</span>
           <span class="exp-period">Aug 2022 – Sep 2023</span>
         </div>
-        <div class="exp-company">Appiness Interactive Pvt. Ltd. &nbsp;&middot;&nbsp; Bengaluru &nbsp;&middot;&nbsp; Frontm Maritime Platform</div>
+        <div class="exp-company">Appiness Interactive Pvt. Ltd. &nbsp;&middot;&nbsp; Bengaluru &nbsp;&middot;&nbsp; Client: FrontM Maritime Platform</div>
         <div class="exp-badge">&#127942; Best Employee of the Year</div>
         <div class="psi-grid">
           <div class="psi-block">
@@ -921,19 +1063,19 @@ footer a:hover{color:var(--text)}
           </div>
           <div class="psi-block">
             <div class="psi-label sol">&#9881; Solution</div>
-            <p>Led a team of <strong>8 engineers</strong> and <strong>architected a custom JavaScript framework from scratch</strong> using Node.js, C++, and AWS — standardising Frontm&rsquo;s development model with modular, reusable components enabling faster feature delivery across maritime applications.</p>
+            <p>Led a team of <strong>8 engineers</strong> and <strong>architected a custom JavaScript framework from scratch</strong> using Node.js and AWS — standardising Frontm&rsquo;s development model with modular, reusable components enabling faster feature delivery across maritime applications.</p>
           </div>
           <div class="psi-block">
             <div class="psi-label imp">&#10024; Impact</div>
-            <p>The custom framework cut feature delivery time by ~40% for Frontm&rsquo;s global maritime platform. Mentored 8 engineers, ran Agile ceremonies, enforced architecture standards — recognised as <strong>Best Employee of the Year</strong>.</p>
+            <p>The runtime I architected powers <strong>FrontM</strong> — a maritime superapp now serving <strong>1,000+ vessels</strong>, <strong>50,000+ maritime professionals</strong>, and <strong>25+ leading shipping companies</strong> globally. Mentored and grew 8 engineers, ran Agile ceremonies, enforced architecture standards. Recognised as <strong>Best Employee of the Year</strong>.</p>
           </div>
         </div>
         <div class="proj-arch">
           <div class="proj-arch-label">Tech Stack</div>
-          <div class="proj-arch-val">Custom Node.js Runtime + C++ Bindings &nbsp;&rarr;&nbsp; AWS (EC2 &middot; S3 &middot; Lambda) &nbsp;&rarr;&nbsp; Maritime API Integrations &nbsp;&rarr;&nbsp; 8-Engineer Team</div>
+          <div class="proj-arch-val">Custom Node.js Runtime &nbsp;&rarr;&nbsp; AWS (EC2 &middot; S3 &middot; Lambda) &nbsp;&rarr;&nbsp; Maritime API Integrations &nbsp;&rarr;&nbsp; 8-Engineer Team</div>
         </div>
         <div class="exp-tags">
-          <span class="exp-tag">Node.js</span><span class="exp-tag">C++</span>
+          <span class="exp-tag">Node.js</span>
           <span class="exp-tag">AWS</span><span class="exp-tag">JavaScript</span>
           <span class="exp-tag">Custom Framework</span>
           <span class="exp-tag">Team Leadership (8 devs)</span>
@@ -945,7 +1087,7 @@ footer a:hover{color:var(--text)}
       <!-- Capgemini -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">Full Stack Web Developer</span>
+          <span class="exp-role">Senior Software Engineer (Full Stack)</span>
           <span class="exp-period">Feb 2021 – Aug 2022</span>
         </div>
         <div class="exp-company">Capgemini &nbsp;&middot;&nbsp; Bengaluru</div>
@@ -989,21 +1131,13 @@ footer a:hover{color:var(--text)}
       <div class="proj-card featured reveal">
         <div class="proj-accent c-blue"></div>
         <div class="proj-visual featured">
-          <div class="pv-map">
-            <div class="pv-grid"></div>
-            <div class="pv-dot" style="top:38%;left:22%"></div>
-            <div class="pv-dot d2" style="top:55%;left:47%"></div>
-            <div class="pv-dot d3" style="top:30%;left:68%"></div>
-            <div class="pv-dot d2" style="top:62%;left:80%"></div>
-            <div class="pv-dot" style="top:72%;left:35%"></div>
-            <div class="pv-trail" style="top:42%;left:22%;width:26%;transform:rotate(-8deg)"></div>
-            <div class="pv-trail" style="top:51%;left:47%;width:22%;transform:rotate(4deg)"></div>
-            <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 800 160" preserveAspectRatio="none">
-              <path d="M180,62 Q280,50 376,88" stroke="rgba(34,211,238,.2)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
-              <path d="M376,88 Q520,76 544,99" stroke="rgba(59,130,246,.2)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
-              <path d="M280,115 Q340,100 376,88" stroke="rgba(16,185,129,.15)" stroke-width="1" fill="none" stroke-dasharray="3,4"/>
-            </svg>
-          </div>
+          <img
+            src="https://geoserves.com/wp-content/uploads/2025/05/GeoOne-background.png"
+            alt="GeoOne — Voyage Operations Suite product interface"
+            loading="eager"
+            style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#020c18,#071520)'"
+          />
         </div>
         <div class="proj-body">
           <div class="proj-meta">
@@ -1011,7 +1145,7 @@ footer a:hover{color:var(--text)}
             <span class="proj-status">&#9679; Production</span>
           </div>
           <h3 class="proj-name">GeoOne — Voyage Operations Suite</h3>
-          <p class="proj-tagline">The maritime industry&rsquo;s first unified platform for voyage operations, fleet intelligence, and IMO emissions compliance — serving global shipping operators.</p>
+          <p class="proj-tagline">The <strong>world&rsquo;s first integrated Voyage Operations Suite (VOS)</strong> — unifying voyage planning, bunker procurement, port disbursements, laytime management, vessel performance monitoring, and automated IMO CII/EEXI/EU ETS compliance in a single platform for global shipping operators.</p>
 
           <div class="proj-psi psi-grid">
             <div class="proj-psi-row p-prob">
@@ -1028,9 +1162,34 @@ footer a:hover{color:var(--text)}
             </div>
           </div>
 
+          <div class="geoone-showcase">
+            <div class="geoone-screenshot-wrap">
+              <div class="geoone-screenshot-label">Mobile Dashboard</div>
+              <img
+                src="https://geoserves.com/wp-content/uploads/2025/05/GeoOne-Dashboard-Mobile.png"
+                alt="GeoOne mobile dashboard — real-time voyage operations on mobile"
+                loading="lazy"
+                class="geoone-screenshot-img"
+                onerror="this.parentElement.parentElement.style.display='none'"
+              />
+            </div>
+          </div>
+
           <div class="proj-arch">
             <div class="proj-arch-label">System Architecture</div>
             <div class="proj-arch-val">React SPA &nbsp;&rarr;&nbsp; Node.js REST / WebSocket API &nbsp;&rarr;&nbsp; PostgreSQL + TimescaleDB &nbsp;&rarr;&nbsp; AWS (ECS &middot; S3 &middot; CloudFront) &nbsp;&rarr;&nbsp; Mapbox GL (geospatial)</div>
+          </div>
+          <div class="proj-arch" style="margin-top:.75rem">
+            <div class="proj-arch-label">Platform Ecosystem</div>
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.5rem">
+              <img
+                src="https://geoserves.com/wp-content/uploads/2025/05/GeoOne-Ecosystem.svg"
+                alt="GeoOne platform ecosystem — bunker, laytime, port calls, emissions, vessel performance"
+                loading="lazy"
+                style="width:100%;max-height:180px;object-fit:contain;filter:invert(1) brightness(.85);border-radius:6px"
+                onerror="this.parentElement.parentElement.style.display='none'"
+              />
+            </div>
           </div>
 
           <div class="proj-tags">
@@ -1101,13 +1260,16 @@ footer a:hover{color:var(--text)}
       <div class="proj-card reveal d1">
         <div class="proj-accent c-indigo"></div>
         <div class="proj-visual">
-          <div class="pv-table">
-            <div class="pv-row"><div class="pv-cell hd" style="width:18%"></div><div class="pv-cell hd" style="width:28%"></div><div class="pv-cell hd" style="width:22%"></div><div class="pv-cell hd" style="width:20%"></div></div>
-            <div class="pv-row"><div class="pv-cell hi" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
-            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell hi" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
-            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell hi" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
-            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell hi" style="width:20%"></div></div>
-            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
+          <div class="pv-brand-bar">
+            <div class="pv-brand-label">6 Truck Brands Served</div>
+            <div class="pv-brands">
+              <img src="https://www.daimlertruck.com/fileadmin/brands/mercedes-benz.svg" alt="Mercedes-Benz Trucks" class="pv-brand-logo" onerror="this.outerHTML='<span class=pv-brand-text>Mercedes-Benz</span>'"/>
+              <img src="https://www.daimlertruck.com/fileadmin/brands/freightliner.svg" alt="Freightliner" class="pv-brand-logo" onerror="this.outerHTML='<span class=pv-brand-text>Freightliner</span>'"/>
+              <img src="https://www.daimlertruck.com/fileadmin/brands/westernstar.svg" alt="Western Star" class="pv-brand-logo" onerror="this.outerHTML='<span class=pv-brand-text>Western Star</span>'"/>
+              <img src="https://www.daimlertruck.com/fileadmin/brands/bharatbenz.svg" alt="BharatBenz" class="pv-brand-logo" onerror="this.outerHTML='<span class=pv-brand-text>BharatBenz</span>'"/>
+              <img src="https://www.daimlertruck.com/fileadmin/brands/setra.svg" alt="Setra" class="pv-brand-logo" onerror="this.outerHTML='<span class=pv-brand-text>Setra</span>'"/>
+              <span class="pv-brand-text">FUSO</span>
+            </div>
           </div>
         </div>
         <div class="proj-body">
@@ -1178,7 +1340,7 @@ footer a:hover{color:var(--text)}
           <span class="sp">Node.js</span><span class="sp">Express.js</span>
           <span class="sp">Spring Boot</span><span class="sp">Java</span><span class="sp">Kotlin</span>
           <span class="sp">REST API Design</span><span class="sp">GraphQL</span>
-          <span class="sp">WebSocket</span><span class="sp">Django</span><span class="sp">C++</span>
+          <span class="sp">WebSocket</span><span class="sp">Django</span>
         </div>
       </div>
       <div class="stack-card reveal d2">
@@ -1300,7 +1462,7 @@ footer a:hover{color:var(--text)}
     <div class="gh-inner">
       <div class="gh-text reveal">
         <p>My GitHub reflects the breadth of technologies I work with day-to-day — from <strong>React and Node.js applications</strong> to <strong>Java/Spring Boot services</strong> and infrastructure tooling. I&rsquo;m a consistent practitioner of clean code, meaningful commit history, and documented architecture decisions.</p>
-        <p>I actively contribute to the codebases I work on professionally, and I&rsquo;m continuously building side tooling and explorations in <strong>maritime technology, geospatial data, and AI integrations</strong> — particularly around OpenAI API and Mapbox GL use cases in the shipping domain.</p>
+        <p>Most of my production work lives in <strong>private organisation repositories</strong> — GeoOne, the Daimler internal tooling, and the FrontM platform are all under their respective org accounts and cannot be made public. The stats below reflect personal contributions and open explorations. I&rsquo;m happy to walk through architecture and code decisions in a technical interview.</p>
         <p>My top languages reflect my full-stack strengths: <strong>JavaScript / TypeScript</strong> for React and Node.js, <strong>Java</strong> for Spring Boot enterprise systems, and <strong>Python</strong> for data tooling and AI integrations.</p>
         <div class="gh-link-row">
           <a href="https://github.com/mukundakamatham" target="_blank" rel="noopener" class="gh-link">
@@ -1322,7 +1484,7 @@ footer a:hover{color:var(--text)}
         <div class="gh-stat-img">
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mukundakamatham&layout=compact&theme=dark&hide_border=true&bg_color=111827&title_color=3B82F6&text_color=94A3B8" alt="Top Languages" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-          /><div class="gh-fallback" style="display:none;padding:1rem;font-size:.82rem;color:var(--muted)">&#128196; Top Languages: JavaScript · TypeScript · Java · Python · C++</div>
+          /><div class="gh-fallback" style="display:none;padding:1rem;font-size:.82rem;color:var(--muted)">&#128196; Top Languages: JavaScript · TypeScript · Java · Python</div>
         </div>
       </div>
     </div>
@@ -1330,6 +1492,33 @@ footer a:hover{color:var(--text)}
 </section>
 
 <!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
+<!-- ── ENGINEERING PHILOSOPHY ────────────────────────────────────────────── -->
+<section id="philosophy" style="padding:5rem 0">
+  <div class="con">
+    <p class="s-eyebrow reveal" style="text-align:center">Engineering Philosophy</p>
+    <h2 class="s-title reveal d1" style="text-align:center">How I <em>build</em></h2>
+    <div class="phil-body reveal d2">
+      <p>I build systems for operators who can&rsquo;t afford downtime — maritime vessels mid-voyage, logistics fleets crossing borders, enterprise teams managing millions in asset value. That context shapes how I write code: <strong>observable by default, failure-tolerant, and comprehensible to the engineer who inherits it at 2am.</strong></p>
+      <p>I believe the best software comes from engineers who understand the domain deeply enough to push back on requirements. After five years in maritime technology, I understand voyage economics, regulatory compliance pressure, and the operational reality of decisions made at sea — and I bring that into every architecture decision I make.</p>
+      <p>I keep three questions in mind before shipping anything: <em>Can we debug this in production? Can we hand this to a new engineer in six months? Does it solve the actual problem or the stated problem?</em> If the answer to any of those is no, we&rsquo;re not done yet.</p>
+    </div>
+    <div class="phil-beliefs reveal d3">
+      <div class="phil-belief">
+        <div class="phil-belief-title">Domain depth over framework breadth</div>
+        <div class="phil-belief-desc">Understanding maritime operations made me a better engineer than knowing every framework. I&rsquo;d rather deeply know one domain than shallowly touch ten.</div>
+      </div>
+      <div class="phil-belief">
+        <div class="phil-belief-title">Observability is not optional</div>
+        <div class="phil-belief-desc">Production systems must be debuggable. Logging, tracing, and health metrics are first-class features — not post-launch additions.</div>
+      </div>
+      <div class="phil-belief">
+        <div class="phil-belief-title">Simplicity is the senior skill</div>
+        <div class="phil-belief-desc">The most complex systems I&rsquo;ve seen were made complex by engineers who wanted to appear clever. The hardest thing to write is a system your team can actually maintain.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="con">
     <div class="contact-avail"><span class="avail-dot"></span> Available Now · 30-Day Notice · EU &amp; Remote</div>
@@ -1337,6 +1526,10 @@ footer a:hover{color:var(--text)}
     <p class="contact-sub">Looking for a Senior Full Stack Engineer who ships enterprise-scale systems and brings both technical depth and leadership experience to your team? I respond to all genuine enquiries within 24 hours and am available for interviews immediately.</p>
 
     <div class="contact-links">
+      <a href="https://calendly.com/mukundh-k" target="_blank" rel="noopener" class="c-link c-link-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Schedule a Call
+      </a>
       <a href="mailto:mukundh.k@icloud.com" class="c-link">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         mukundh.k@icloud.com
