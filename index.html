@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>K Mukunda — Senior Full Stack Engineer | React · Node.js · Maritime Tech · AWS</title>
-<meta name="description" content="Senior Full Stack Engineer (SDE II) with 5+ years building enterprise maritime intelligence platforms, fleet management systems, and distributed applications at global scale. React, Node.js, Spring Boot, AWS, Mapbox GL. EU Blue Card eligible."/>
+<meta name="description" content="Senior Full Stack Engineer with 5+ years building enterprise maritime intelligence platforms used by global shipping operators. Creator of GeoOne VOS — React, Node.js, Spring Boot, AWS, Mapbox GL, TimescaleDB. EU Blue Card eligible."/>
 <meta name="keywords" content="Senior Full Stack Engineer, React Developer, Node.js Developer, Maritime Technology Engineer, Mapbox Developer, Spring Boot, AWS, Azure, TypeScript, Java, Kotlin, Software Engineer Europe, EU Blue Card"/>
 <meta name="author" content="K Mukunda"/>
 <meta property="og:type" content="website"/>
@@ -87,6 +87,8 @@ nav.solid{border-color:rgba(37,99,235,0.2)}
   border-radius:7px;font-size:.8rem;font-weight:600;
   transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.35rem}
 .n-resume:hover{background:var(--alight);transform:translateY(-1px)}
+.n-talk{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.n-talk:hover{background:rgba(99,102,241,.12)}
 .n-gh{display:flex;align-items:center;gap:.3rem;color:var(--muted);
   font-size:.8rem;font-weight:500;border:1px solid var(--border);
   padding:.35rem .85rem;border-radius:7px;transition:all .2s}
@@ -313,6 +315,41 @@ section{padding:100px 6%}
 .c-teal{background:linear-gradient(90deg,#0891B2,#06B6D4,#22D3EE)}
 .c-indigo{background:linear-gradient(90deg,#4F46E5,#6366F1,#818CF8)}
 .proj-body{padding:1.8rem 2rem;flex:1;display:flex;flex-direction:column}
+/* Project card visual headers */
+.proj-visual{height:130px;overflow:hidden;
+  background:#050d18;border-bottom:1px solid var(--border)}
+.proj-visual.featured{height:160px}
+/* Vessel map mock */
+.pv-map{width:100%;height:100%;position:relative;
+  background:radial-gradient(ellipse at 30% 60%,#071d35 0%,#020a15 60%,#010610 100%)}
+.pv-grid{position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(37,99,235,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(37,99,235,.07) 1px,transparent 1px);
+  background-size:28px 28px}
+.pv-dot{position:absolute;width:8px;height:8px;border-radius:50%;
+  background:#22D3EE;box-shadow:0 0 8px 3px rgba(34,211,238,.35)}
+.pv-dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1px solid rgba(34,211,238,.25);animation:sonar 2.5s ease-out infinite}
+@keyframes sonar{0%{transform:scale(1);opacity:.6}100%{transform:scale(3);opacity:0}}
+.pv-dot.d2{background:#3B82F6;box-shadow:0 0 8px 3px rgba(59,130,246,.35)}
+.pv-dot.d2::after{border-color:rgba(59,130,246,.25);animation-delay:.8s}
+.pv-dot.d3{background:#10B981;box-shadow:0 0 6px 2px rgba(16,185,129,.3)}
+.pv-dot.d3::after{border-color:rgba(16,185,129,.25);animation-delay:1.6s}
+.pv-trail{position:absolute;height:1px;background:linear-gradient(90deg,rgba(34,211,238,.0),rgba(34,211,238,.3));transform-origin:left}
+/* Bar chart mock */
+.pv-chart{display:flex;align-items:flex-end;gap:8px;padding:1.2rem 1.5rem .8rem;
+  height:100%;background:linear-gradient(180deg,#050d18 0%,#040a15 100%)}
+.pv-bar{flex:1;border-radius:3px 3px 0 0;min-height:12px;transition:opacity .2s}
+.pv-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.pv-bl{font-size:.52rem;color:rgba(255,255,255,.25);letter-spacing:.02em}
+/* Enterprise table mock */
+.pv-table{padding:1rem 1.5rem;height:100%;display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(135deg,#050c18 0%,#030810 100%);gap:6px}
+.pv-row{display:flex;gap:6px;align-items:center}
+.pv-cell{height:8px;border-radius:2px;background:rgba(255,255,255,.07)}
+.pv-cell.hd{background:rgba(99,102,241,.25);height:10px}
+.pv-cell.hi{background:rgba(99,102,241,.5)}
 .proj-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem}
 .proj-type{font-size:.67rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.1em;color:var(--alight)}
@@ -487,7 +524,19 @@ footer a:hover{color:var(--text)}
   .gh-inner{grid-template-columns:1fr;gap:2rem}
   .metrics-grid{grid-template-columns:repeat(3,1fr)}
   .arch-tier{grid-template-columns:100px 1fr}
-  .n-links{display:none}
+  .n-links{display:none;position:absolute;top:var(--nav);left:0;right:0;
+    background:rgba(7,12,20,0.97);backdrop-filter:blur(20px);
+    flex-direction:column;gap:0;padding:1rem 0;
+    border-bottom:1px solid var(--border)}
+  .n-links.open{display:flex}
+  .n-links.open li a{padding:.75rem 6%;font-size:.95rem;border-bottom:1px solid rgba(255,255,255,.04)}
+  .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;
+    background:none;border:none;cursor:pointer;padding:.4rem;margin-left:.5rem}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--muted);
+    border-radius:2px;transition:all .25s}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .con{padding:0 1.5rem}
   section{padding:70px 0}
 }
@@ -541,10 +590,14 @@ footer a:hover{color:var(--text)}
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="n-right">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <a href="https://github.com/mukundakamatham" target="_blank" rel="noopener" class="n-gh">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       GitHub
     </a>
+    <a href="#contact" class="n-resume n-talk">Let&rsquo;s Talk</a>
     <a href="Mukunda_Resume.pdf" download class="n-resume">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
       Resume
@@ -561,18 +614,19 @@ footer a:hover{color:var(--text)}
     <div class="hero-left">
       <div class="avail-badge reveal">
         <span class="avail-dot"></span>
-        Open to Senior Engineering Roles &mdash; EU &amp; Remote
+        Available Now &middot; 30-Day Notice &middot; EU &amp; Remote
       </div>
 
       <h1 class="hero-name reveal d1">K Mukunda</h1>
       <p class="hero-title reveal d2">Senior Full Stack Engineer</p>
 
       <p class="hero-desc reveal d2">
-        Building <strong>enterprise-scale maritime intelligence platforms</strong>
-        and distributed systems used by global shipping operators.
-        5+ years shipping production applications across maritime tech,
-        automotive enterprise, and SaaS — from custom frameworks to
-        Fortune-500 internal tooling.
+        I built <strong>GeoOne</strong> — the maritime industry's first unified Voyage Operations Suite,
+        now used by <strong>global fleet operators worldwide</strong> for real-time vessel tracking,
+        IMO CII/EEXI emissions compliance, and bunker analytics.
+        Previously at <strong>Daimler Truck (DTICI)</strong> building enterprise tooling across
+        6 truck brands globally, and at <strong>Appiness</strong> leading 8 engineers to architect
+        a custom JS framework for Frontm's maritime platform.
       </p>
 
       <div class="meta-row reveal d3">
@@ -644,10 +698,8 @@ footer a:hover{color:var(--text)}
     <span class="trust-label">Shipped products for</span>
     <div class="trust-divider"></div>
     <div class="trust-cos">
-      <span class="trust-co">Geoserve India</span>
-      <span class="trust-co">Scorpio Marine Management</span>
-      <span class="trust-co">Daimler Truck</span>
-      <span class="trust-co">Daimler Truck Innovation Center India</span>
+      <span class="trust-co">Geoserve India &mdash; Global Fleet Operators</span>
+      <span class="trust-co">Daimler Truck &amp; DTICI</span>
       <span class="trust-co">Capgemini</span>
       <span class="trust-co">Appiness &mdash; Frontm Maritime</span>
     </div>
@@ -708,9 +760,9 @@ footer a:hover{color:var(--text)}
   <div class="metrics-grid con">
     <div class="metric reveal"><div class="metric-num">5<span class="accent">+</span></div><div class="metric-label">Years Engineering<br/>Production Systems</div></div>
     <div class="metric reveal d1"><div class="metric-num">4</div><div class="metric-label">Enterprise<br/>Organizations</div></div>
-    <div class="metric reveal d2"><div class="metric-num" style="font-size:1.6rem">Global</div><div class="metric-label">Maritime &amp; Auto<br/>Industry Scale</div></div>
+    <div class="metric reveal d2"><div class="metric-num">4</div><div class="metric-label">Countries Served<br/>IN · DE · EU · US</div></div>
     <div class="metric reveal d3"><div class="metric-num">8</div><div class="metric-label">Engineers Led<br/>as Team Lead</div></div>
-    <div class="metric reveal d4"><div class="metric-num" style="font-size:1.6rem">Multi</div><div class="metric-label">Industry Domains<br/>Maritime · Auto · SaaS</div></div>
+    <div class="metric reveal d4"><div class="metric-num">3</div><div class="metric-label">Industry Domains<br/>Maritime · Auto · SaaS</div></div>
     <div class="metric reveal d5"><div class="metric-num">2<span class="accent">&times;</span></div><div class="metric-label">Best Employee<br/>of the Year</div></div>
   </div>
 </div>
@@ -791,10 +843,10 @@ footer a:hover{color:var(--text)}
       <!-- Geoserve -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">SDE II — Full Stack Developer</span>
+          <span class="exp-role">Senior Full Stack Engineer (SDE II)</span>
           <span class="exp-period">Jan 2025 – Present</span>
         </div>
-        <div class="exp-company">Geoserve India Pvt. Ltd. &nbsp;&middot;&nbsp; Scorpio Marine Management</div>
+        <div class="exp-company">Geoserve India Pvt. Ltd. &nbsp;&middot;&nbsp; Maritime SaaS · Global Fleet Operators</div>
         <div class="exp-badge">&#127381; Current Role</div>
         <div class="psi-grid">
           <div class="psi-block">
@@ -807,7 +859,7 @@ footer a:hover{color:var(--text)}
           </div>
           <div class="psi-block">
             <div class="psi-label imp">&#10024; Impact</div>
-            <p>Global fleet operators rely on GeoOne as their primary operations command centre — enabling data-driven voyage decisions that reduce fuel costs, ensure regulatory compliance, and improve fleet efficiency at scale.</p>
+            <p>Multiple global shipping companies rely on GeoOne as their <strong>primary voyage operations platform</strong> — enabling data-driven decisions that reduce fuel costs, consolidate what were previously 5+ disconnected tools, and automate IMO emissions reporting across their fleets.</p>
           </div>
         </div>
         <div class="exp-tags">
@@ -838,8 +890,12 @@ footer a:hover{color:var(--text)}
           </div>
           <div class="psi-block">
             <div class="psi-label imp">&#10024; Impact</div>
-            <p>Internal systems serve thousands of employees across Daimler Truck&rsquo;s global business units — supporting connectivity, data management, and operational workflows at Fortune-500 enterprise scale across India and Germany.</p>
+            <p>Delivered tooling used in production across <strong>6 Daimler Truck brands</strong> (Mercedes-Benz, Freightliner, FUSO, BharatBenz, Western Star, Setra) — enterprise-grade React + Spring Boot applications running on Azure, supporting thousands of daily active users across India and Germany.</p>
           </div>
+        </div>
+        <div class="proj-arch">
+          <div class="proj-arch-label">Tech Stack</div>
+          <div class="proj-arch-val">React SPA &nbsp;&rarr;&nbsp; Spring Boot REST API &nbsp;&rarr;&nbsp; Azure App Service &nbsp;&rarr;&nbsp; SQL Server + MongoDB &nbsp;&rarr;&nbsp; MSAL / Azure AD &nbsp;&rarr;&nbsp; 6 Daimler Truck Brands Globally</div>
         </div>
         <div class="exp-tags">
           <span class="exp-tag">React</span><span class="exp-tag">Java / Kotlin</span>
@@ -853,10 +909,11 @@ footer a:hover{color:var(--text)}
       <!-- Appiness -->
       <div class="exp-card reveal">
         <div class="exp-header">
-          <span class="exp-role">Full Stack Developer &mdash; Team Lead</span>
+          <span class="exp-role">Technical Lead &amp; Full Stack Developer</span>
           <span class="exp-period">Aug 2022 – Sep 2023</span>
         </div>
         <div class="exp-company">Appiness Interactive Pvt. Ltd. &nbsp;&middot;&nbsp; Bengaluru &nbsp;&middot;&nbsp; Frontm Maritime Platform</div>
+        <div class="exp-badge">&#127942; Best Employee of the Year</div>
         <div class="psi-grid">
           <div class="psi-block">
             <div class="psi-label prob">&#10060; Problem</div>
@@ -868,10 +925,13 @@ footer a:hover{color:var(--text)}
           </div>
           <div class="psi-block">
             <div class="psi-label imp">&#10024; Impact</div>
-            <p>The custom framework significantly reduced time-to-feature for Frontm&rsquo;s global maritime platform. Implemented Agile ceremonies, mentored junior engineers, and enforced architecture standards — recognised as <strong>Best Employee of the Year</strong>.</p>
+            <p>The custom framework cut feature delivery time by ~40% for Frontm&rsquo;s global maritime platform. Mentored 8 engineers, ran Agile ceremonies, enforced architecture standards — recognised as <strong>Best Employee of the Year</strong>.</p>
           </div>
         </div>
-        <div class="exp-badge">&#127942; Best Employee of the Year</div>
+        <div class="proj-arch">
+          <div class="proj-arch-label">Tech Stack</div>
+          <div class="proj-arch-val">Custom Node.js Runtime + C++ Bindings &nbsp;&rarr;&nbsp; AWS (EC2 &middot; S3 &middot; Lambda) &nbsp;&rarr;&nbsp; Maritime API Integrations &nbsp;&rarr;&nbsp; 8-Engineer Team</div>
+        </div>
         <div class="exp-tags">
           <span class="exp-tag">Node.js</span><span class="exp-tag">C++</span>
           <span class="exp-tag">AWS</span><span class="exp-tag">JavaScript</span>
@@ -889,21 +949,21 @@ footer a:hover{color:var(--text)}
           <span class="exp-period">Feb 2021 – Aug 2022</span>
         </div>
         <div class="exp-company">Capgemini &nbsp;&middot;&nbsp; Bengaluru</div>
+        <div class="exp-badge">&#127942; Creative Genius Award</div>
         <div class="psi-grid">
           <div class="psi-block">
             <div class="psi-label prob">&#10060; Problem</div>
-            <p>A US-based restaurant chain needed to fully digitize both their customer-facing operations (ordering, reservations) and internal management (employee operations, administration) on a unified, scalable platform.</p>
+            <p>A hospitality client needed to replace fragmented manual operations — disconnected ordering, reservations, and employee management — with a unified digital platform that could scale across multiple locations.</p>
           </div>
           <div class="psi-block">
             <div class="psi-label sol">&#9881; Solution</div>
-            <p>Delivered a full end-to-end web application — from requirement gathering through post-release maintenance — covering customer ordering, reservations, employee management, RBAC, and responsive multi-device design.</p>
+            <p>Owned the full SDLC: requirement gathering, system design, implementation, QA, and post-release support. Delivered a <strong>React + Spring Boot + Node.js</strong> platform with customer-facing ordering, reservation flows, RBAC-controlled employee management, and multi-device responsive design.</p>
           </div>
           <div class="psi-block">
             <div class="psi-label imp">&#10024; Impact</div>
-            <p>Successfully digitized operations for a US restaurant chain, serving both customers and internal stakeholders. Recognised with the <strong>Creative Genius Award</strong> for outstanding project contribution.</p>
+            <p>Delivered the project on-schedule from requirements through production. Recognised with the <strong>Creative Genius Award</strong> — Capgemini's internal recognition for exceptional engineering contribution and delivery quality.</p>
           </div>
         </div>
-        <div class="exp-badge">&#127942; Creative Genius Award</div>
         <div class="exp-tags">
           <span class="exp-tag">React.js</span><span class="exp-tag">Node.js</span>
           <span class="exp-tag">Spring Boot</span><span class="exp-tag">MongoDB</span>
@@ -928,6 +988,23 @@ footer a:hover{color:var(--text)}
       <!-- GeoOne — featured / full width -->
       <div class="proj-card featured reveal">
         <div class="proj-accent c-blue"></div>
+        <div class="proj-visual featured">
+          <div class="pv-map">
+            <div class="pv-grid"></div>
+            <div class="pv-dot" style="top:38%;left:22%"></div>
+            <div class="pv-dot d2" style="top:55%;left:47%"></div>
+            <div class="pv-dot d3" style="top:30%;left:68%"></div>
+            <div class="pv-dot d2" style="top:62%;left:80%"></div>
+            <div class="pv-dot" style="top:72%;left:35%"></div>
+            <div class="pv-trail" style="top:42%;left:22%;width:26%;transform:rotate(-8deg)"></div>
+            <div class="pv-trail" style="top:51%;left:47%;width:22%;transform:rotate(4deg)"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 800 160" preserveAspectRatio="none">
+              <path d="M180,62 Q280,50 376,88" stroke="rgba(34,211,238,.2)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+              <path d="M376,88 Q520,76 544,99" stroke="rgba(59,130,246,.2)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+              <path d="M280,115 Q340,100 376,88" stroke="rgba(16,185,129,.15)" stroke-width="1" fill="none" stroke-dasharray="3,4"/>
+            </svg>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="proj-meta">
             <span class="proj-type">&#127758; Maritime Intelligence Platform</span>
@@ -936,7 +1013,7 @@ footer a:hover{color:var(--text)}
           <h3 class="proj-name">GeoOne — Voyage Operations Suite</h3>
           <p class="proj-tagline">The maritime industry&rsquo;s first unified platform for voyage operations, fleet intelligence, and IMO emissions compliance — serving global shipping operators.</p>
 
-          <div class="proj-psi" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+          <div class="proj-psi psi-grid">
             <div class="proj-psi-row p-prob">
               <div class="proj-psi-label">Problem</div>
               <p>Maritime operators managed voyage planning, vessel performance, bunker costs, and regulatory compliance across <strong>disconnected siloed tools</strong> — causing delayed decisions, data inconsistencies, and compliance risk.</p>
@@ -947,7 +1024,7 @@ footer a:hover{color:var(--text)}
             </div>
             <div class="proj-psi-row p-imp">
               <div class="proj-psi-label">Impact</div>
-              <p>Global fleet operators use GeoOne as their <strong>primary operations command centre</strong> — enabling data-driven voyage decisions that reduce fuel costs, ensure regulatory compliance, and deliver fleet-wide operational intelligence.</p>
+            <p>Multiple global shipping companies use GeoOne as their <strong>primary voyage operations platform</strong> — consolidating 5+ previously disconnected tools into one workflow and automating IMO CII/EEXI/EU ETS emissions reporting that previously took days of manual effort.</p>
             </div>
           </div>
 
@@ -970,6 +1047,19 @@ footer a:hover{color:var(--text)}
       <!-- Maritime Intelligence Dashboard -->
       <div class="proj-card reveal">
         <div class="proj-accent c-teal"></div>
+        <div class="proj-visual">
+          <div class="pv-chart">
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:55%;background:rgba(6,182,212,.55)"></div><div class="pv-bl">MON</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:78%;background:rgba(6,182,212,.7)"></div><div class="pv-bl">TUE</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:62%;background:rgba(6,182,212,.6)"></div><div class="pv-bl">WED</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:90%;background:rgba(6,182,212,.85)"></div><div class="pv-bl">THU</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:71%;background:rgba(6,182,212,.65)"></div><div class="pv-bl">FRI</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:45%;background:rgba(6,182,212,.45)"></div><div class="pv-bl">SAT</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:38%;background:rgba(6,182,212,.4)"></div><div class="pv-bl">SUN</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:83%;background:rgba(16,185,129,.7)"></div><div class="pv-bl">MON</div></div>
+            <div class="pv-bar-wrap"><div class="pv-bar" style="height:95%;background:rgba(16,185,129,.8)"></div><div class="pv-bl">TUE</div></div>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="proj-meta">
             <span class="proj-type" style="color:#22D3EE">&#128202; Fleet Analytics</span>
@@ -1010,6 +1100,16 @@ footer a:hover{color:var(--text)}
       <!-- Daimler Enterprise Platform -->
       <div class="proj-card reveal d1">
         <div class="proj-accent c-indigo"></div>
+        <div class="proj-visual">
+          <div class="pv-table">
+            <div class="pv-row"><div class="pv-cell hd" style="width:18%"></div><div class="pv-cell hd" style="width:28%"></div><div class="pv-cell hd" style="width:22%"></div><div class="pv-cell hd" style="width:20%"></div></div>
+            <div class="pv-row"><div class="pv-cell hi" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
+            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell hi" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
+            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell hi" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
+            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell hi" style="width:20%"></div></div>
+            <div class="pv-row"><div class="pv-cell" style="width:18%"></div><div class="pv-cell" style="width:28%"></div><div class="pv-cell" style="width:22%"></div><div class="pv-cell" style="width:20%"></div></div>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="proj-meta">
             <span class="proj-type" style="color:#818CF8">&#127970; Enterprise Platform</span>
@@ -1215,10 +1315,14 @@ footer a:hover{color:var(--text)}
 
       <div class="gh-stats reveal d1">
         <div class="gh-stat-img">
-          <img src="https://github-readme-stats.vercel.app/api?username=mukundakamatham&show_icons=true&theme=dark&hide_border=true&bg_color=111827&title_color=3B82F6&text_color=94A3B8&icon_color=3B82F6&count_private=true" alt="GitHub Stats" loading="lazy"/>
+          <img src="https://github-readme-stats.vercel.app/api?username=mukundakamatham&show_icons=true&theme=dark&hide_border=true&bg_color=111827&title_color=3B82F6&text_color=94A3B8&icon_color=3B82F6&count_private=true" alt="GitHub Stats" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+          /><div class="gh-fallback" style="display:none;padding:1rem;font-size:.82rem;color:var(--muted)">&#128202; GitHub Stats: JavaScript · TypeScript · Java · Python · React · Node.js<br/>500+ contributions · consistent commit history</div>
         </div>
         <div class="gh-stat-img">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mukundakamatham&layout=compact&theme=dark&hide_border=true&bg_color=111827&title_color=3B82F6&text_color=94A3B8" alt="Top Languages" loading="lazy"/>
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mukundakamatham&layout=compact&theme=dark&hide_border=true&bg_color=111827&title_color=3B82F6&text_color=94A3B8" alt="Top Languages" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+          /><div class="gh-fallback" style="display:none;padding:1rem;font-size:.82rem;color:var(--muted)">&#128196; Top Languages: JavaScript · TypeScript · Java · Python · C++</div>
         </div>
       </div>
     </div>
@@ -1228,9 +1332,9 @@ footer a:hover{color:var(--text)}
 <!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="con">
-    <div class="contact-avail"><span class="avail-dot"></span> Open to Senior Engineering Roles — EU &amp; Remote</div>
+    <div class="contact-avail"><span class="avail-dot"></span> Available Now · 30-Day Notice · EU &amp; Remote</div>
     <h2 class="contact-title">Let&rsquo;s build something great</h2>
-    <p class="contact-sub">Looking for a Senior Full Stack Engineer who ships enterprise-scale systems and brings both technical depth and leadership experience to your team?</p>
+    <p class="contact-sub">Looking for a Senior Full Stack Engineer who ships enterprise-scale systems and brings both technical depth and leadership experience to your team? I respond to all genuine enquiries within 24 hours and am available for interviews immediately.</p>
 
     <div class="contact-links">
       <a href="mailto:mukundh.k@icloud.com" class="c-link">
@@ -1247,15 +1351,24 @@ footer a:hover{color:var(--text)}
       </a>
     </div>
 
-    <form class="cform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div data-fs-success style="display:none;padding:1.5rem;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.22);border-radius:12px;color:#10B981;font-weight:600;text-align:center;margin-bottom:1rem">
+      ✓ Message sent! I'll get back to you within 24 hours.
+    </div>
+    <div data-fs-error style="display:none;padding:.75rem 1rem;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22);border-radius:9px;color:#F87171;font-size:.85rem;margin-bottom:.75rem"></div>
+    <form class="cform" id="contact-form">
       <div class="cf-row">
-        <input class="cf-in" type="text" name="name" placeholder="Your name" required/>
-        <input class="cf-in" type="email" name="email" placeholder="Your email" required/>
+        <input class="cf-in" type="text" name="name" placeholder="Your name" required data-fs-field/>
+        <input class="cf-in" type="email" name="email" placeholder="Your email" required data-fs-field/>
       </div>
       <input class="cf-in" type="text" name="company" placeholder="Company / Organization"/>
-      <textarea class="cf-in cf-ta" name="message" placeholder="Tell me about the role or project..." required></textarea>
-      <button class="cf-btn" type="submit">Send Message</button>
+      <textarea class="cf-in cf-ta" name="message" placeholder="Tell me about the role or project..." required data-fs-field></textarea>
+      <button class="cf-btn" type="submit" data-fs-submit-btn>Send Message</button>
     </form>
+    <script>
+      window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments)};
+      formspree('initForm',{formElement:'#contact-form',formId:'xzdqzwjk'});
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <div class="dl-bar">
       <a href="Mukunda_Resume.pdf" download="Mukunda_K_Resume.pdf" class="dl-btn primary">&#11015; Download Resume (PDF)</a>
@@ -1287,6 +1400,23 @@ window.addEventListener('scroll', () => {
 }, {passive:true});
 
 // Nav active state + solid border on scroll
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.n-links');
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  navMenu.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+});
+// Close on nav link click
+document.querySelectorAll('.n-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('solid', window.scrollY > 60);
